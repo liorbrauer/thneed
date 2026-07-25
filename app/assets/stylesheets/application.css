@@ -378,10 +378,13 @@ header#nav {
 }
 header#nav nav.links {
 	display: flex;
+	gap: 0.5rem;
 	width: 100%
 }
 header#nav a {
 	color: #ddd;
+	font-weight: bold;
+	text-decoration: none;
 }
 header#subnav a, header#subnav input[type="submit"] {
 	color: var(--color-fg-contrast-6);

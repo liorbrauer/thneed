@@ -7,6 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - .:/lobsters
+      - .:/thneed
     ports:
       - "3000:3000"

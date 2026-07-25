@@ -1,6 +1,6 @@
 # See man 5 aliases for format
 
-# do not include 'lobsters' here - main.cf has ingress configured for mailing list
+# do not include 'thneed' here - main.cf has ingress configured for inbound mail
 
 # system
 root: ADMIN_EMAIL
@@ -10,12 +10,11 @@ contact: root
 deploy: root
 help: root
 postmaster: root
+privacy: root
 security: root
 support: root
 webmaster: root
 
-# personal
-peter: ADMIN_EMAIL
-pushcx: ADMIN_EMAIL
+sysop: ADMIN_EMAIL
 
 nobody: /dev/null

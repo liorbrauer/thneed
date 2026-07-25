@@ -182,7 +182,7 @@
         <fieldset class="radio-group-container grid-fieldset">
           <legend>Color Scheme</legend>
           <div class="radio-group grid-fieldset">
-            <label><%= f.radio_button :prefers_color_scheme, :system, aria: {describedby: "color-scheme-details"} %> System (<a href="https://lobste.rs/s/eg1n75/dark_mode" id="color-scheme-details">details</a>)</label>
+            <label><%= f.radio_button :prefers_color_scheme, :system, aria: {describedby: "color-scheme-details"} %> System <span id="color-scheme-details">(follows your device)</span></label>
             <label><%= f.radio_button :prefers_color_scheme, :light %> Light</label>
             <label><%= f.radio_button :prefers_color_scheme, :dark %> Dark</label>
           </div>
@@ -225,7 +225,7 @@
     <%= label_tag :avatar_source, "Avatar" %>
     <%= form_with model: @edit_user, url: update_avatar_source_path, method: :post, id: 'update_avatar_source', namespace: 'update_avatar_source' do |f| %>
       <span class="hint">
-        Lobsters fetches and serves avatars directly for visitor privacy
+        Thneed fetches and serves avatars directly for visitor privacy
       </span>
 
       <%= f.select :avatar_source, User::AVATAR_SOURCES.to_a %>

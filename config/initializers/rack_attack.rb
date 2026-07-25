@@ -5,13 +5,12 @@
 # RSS reader with many of our feeds? You can combine separate tag feeds like this:
 # instead of /t/c.rss and /t/python.rss, check /t/c,python.rss
 
-# You're trying to figure out something about site activity? You can just write a database query:
-# https://lobste.rs/about#queries
+# Site activity analysis should use a read-only database query.
 
 # You're experimenting with writing a scraper of some sort? I appreciate that you're a fan of the
 # site, but please don't do that to a prod service run by hobbyists. C'mon.
 
-# You're a commercial service? Slow down or email me. pushcx@ our domain.
+# Commercial services should slow down or contact support@thneed.org.
 
 # Otherwise, check the RateLimit headers you get back. RateLimit-Reset tells you how many seconds to
 # wait if you get a 429.

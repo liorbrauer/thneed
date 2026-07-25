@@ -8,7 +8,7 @@ report() {
 } >&2
 trap report ERR
 
-cd /home/deploy/lobsters/current
+cd /home/deploy/thneed/current
 source /home/deploy/.asdf/asdf.sh
 eval "$(/home/deploy/.asdf/bin/asdf vars)"
 

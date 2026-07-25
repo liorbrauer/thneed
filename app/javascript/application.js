@@ -224,8 +224,8 @@ export class _LobstersFunction {
     const title = titleLocation.value;
     if (!title) return;
 
-    // Check for common prefixes like "ask lobsters:", remove it, and add the appropriate tag
-    const m = title.match(/^(show|ask) lobste\.?rs:? (.+)$/i);
+    // Remove redundant prefixes like "ask thneed:" and add the appropriate tag.
+    const m = title.match(/^(show|ask) thneed:? (.+)$/i);
     if (m) {
       const titleEl = qS('#story_title');
       Lobster.tom.addItem(m[1].toLowerCase());

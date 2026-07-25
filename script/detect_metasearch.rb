@@ -46,7 +46,7 @@ rescue JSON::ParserError
   nil
 end
 
-log_dir = "/home/deploy/lobsters/shared/log"
+log_dir = "/home/deploy/thneed/shared/log"
 log_files = Dir.glob([
   File.join(log_dir, "action.log"),
   File.join(log_dir, "*action.log*.gz")

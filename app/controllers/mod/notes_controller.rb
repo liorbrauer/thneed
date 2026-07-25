@@ -10,7 +10,7 @@ class Mod::NotesController < Mod::ModController
     else
       # This is bad and needs to change if note ever has non-trivial validation
       redirect_to user_path(@mod_note.user),
-        error: "Invalid note and Peter half-assed the error handling"
+        error: "Invalid moderation note"
     end
   end
 

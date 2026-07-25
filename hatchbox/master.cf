@@ -121,6 +121,6 @@ mailman   unix  -       n       n       -       -       pipe
   flags=FR user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py
   ${nexthop} ${user}
 
-lobsters-ingress   unix  -       n       n       -       -       pipe
-  flags=FR user=deploy argv=/home/deploy/lobsters/current/script/lobsters-ingress
+thneed-ingress   unix  -       n       n       -       -       pipe
+  flags=FR user=deploy argv=/home/deploy/thneed/current/script/thneed-ingress
   ${nexthop} ${user}

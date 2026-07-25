@@ -7,12 +7,12 @@
 mkdir -p ../../shared/public/avatars
 ln -s ../../../shared/public/avatars public/avatars
 
-mkdir -p /home/deploy/lobsters/shared/database-backups
+mkdir -p /home/deploy/thneed/shared/database-backups
 
 # prod keys
-cp /home/deploy/lobsters/shared/etc/credentials.yml.enc config/credentials.yml.enc
-cp /home/deploy/lobsters/shared/etc/master.key config/master.key
-cp /home/deploy/lobsters/shared/etc/database.yml config/database.yml
+cp /home/deploy/thneed/shared/etc/credentials.yml.enc config/credentials.yml.enc
+cp /home/deploy/thneed/shared/etc/master.key config/master.key
+cp /home/deploy/thneed/shared/etc/database.yml config/database.yml
 
 # confirm unattended upgrades is on and configured
 if cmp -s hatchbox/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades; then

@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
   # https://ryanfb.xyz/etc/2021/08/29/going_cookie-free_with_rails.html
   def clear_session_cookie
     if clear_session_cookie?
-      key = Rails.application.config.session_options[:key] # "lobster_trap"
+      key = Rails.application.config.session_options[:key] # "thneed_session"
       cookies.delete(key)
       request.session_options[:skip] = true
     end

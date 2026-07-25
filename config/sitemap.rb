@@ -1,6 +1,6 @@
 # typed: false
 
-SitemapGenerator::Sitemap.default_host = "https://lobste.rs"
+SitemapGenerator::Sitemap.default_host = "https://thneed.org"
 
 # https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping
 SitemapGenerator::Sitemap.search_engines = {}
@@ -10,7 +10,7 @@ check_daily = 2.weeks.ago
 top_score = Story.all.maximum("score")
 
 SitemapGenerator::Sitemap.create do
-  %w[/about /chat].each do |path|
+  %w[/about /privacy].each do |path|
     add path, changefreq: "monthly", lastmod: nil
   end
 

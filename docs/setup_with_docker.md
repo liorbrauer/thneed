@@ -2,7 +2,7 @@
 
 * Install docker on your machine. Follow the official guideline on docker.com.
 * Create a fork of the repo
-* Clone repo `git clone https://github.com/[USER_NAME]/lobsters.git`
+* Clone the Thneed repository and change into its checkout.
 * Run `make docker-serve`
 * Change the credentials:
   * Create a new terminal tab
@@ -40,7 +40,7 @@ Solution:
 * Open a new terminal
 * Run your app server:
   * IF your app server is running, Run `docker attach <CONTAINER_NAME>`
-    * Example: `docker attach lobsters-app`
+    * Example: `docker attach thneed-app`
     * You can check if it is running by running `docker ps` and if you see something similar by the below image, then the app server is running
     ![docker ps](./docker_ps.jpg)
   * IF you app server is not running, Run `docker compose run --rm --service-ports app`

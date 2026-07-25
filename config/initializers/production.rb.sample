@@ -1,5 +1,5 @@
 # This template for a production-only config file of API tokens was taken and
-# cleaned up from Lobsters.
+# adapted for Thneed from the upstream Lobsters template.
 #
 # Copy this to config/initializers/production.rb and customize, it's already
 # listed in .gitignore to help prevent you from accidentally committing it.
@@ -48,15 +48,15 @@ if Rails.env.production?
     end
 
     def domain
-      "example.org"
+      "thneed.org"
     end
 
     def og_description
-      "A forum."
+      "A community for thoughtful discussion about how AI is changing human work, creativity, power and agency."
     end
 
     def name
-      "Sitename"
+      "Thneed"
     end
 
     def ssl?

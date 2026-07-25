@@ -276,7 +276,6 @@ class Story < ApplicationRecord
       check_not_banned_origin
       check_not_new_domain_from_new_user
       check_not_brigading
-      check_not_pushcx_stream
       errors.add(:url, "is not valid") unless url.match(Utils::URL_RE)
     elsif description.to_s.strip == ""
       errors.add(:description, "must contain text if no URL posted")
@@ -351,7 +350,7 @@ class Story < ApplicationRecord
         #{user.username}: This has a high false-positive rate, but we don't allow new users to submit links to domains we haven't seen before.
         This is to give you a time to learn about topicality and to discourage immediate self-promotion.
 
-        #{user.invited_by_user&.username}: This is a good opportunity for you to introduce #{user.username} to the [site guideline](https://lobste.rs/about#guidelines) around topicality and self-promo.
+        #{user.invited_by_user&.username}: This is a good opportunity for you to introduce #{user.username} to the [site guideline](https://thneed.org/about#guidelines) around topicality and self-promo.
 
         If you need, you can talk to the mods in this conversation, but we'll probably stay out of it unless asked.
 
@@ -396,9 +395,9 @@ class Story < ApplicationRecord
         Hi,
 
         #{user.username}: We don't accept links into projects' bug trackers or discussions to avoid brigading our readers into their community spaces,
-        and because Lobsters doesn't have good threads when we're dropped without context into the middle of a controversy.
+        and because Thneed doesn't have good threads when we're dropped without context into the middle of a controversy.
 
-        #{user.invited_by_user&.username}: This is a good opportunity for you to introduce #{user.username} to the [brigading guideline](https://lobste.rs/about#brigading) and maybe help them find a better link, like an overview from a neutral third party.
+        #{user.invited_by_user&.username}: This is a good opportunity for you to introduce #{user.username} to the [brigading guideline](https://thneed.org/about#brigading) and maybe help them find a better link, like an overview from a neutral third party.
 
         If you need, you can talk to the mods in this conversation, but we'll probably stay out of it unless asked.
 
@@ -407,19 +406,13 @@ class Story < ApplicationRecord
     else
       errors.add :url, <<~EXPLANATION
         is to a project's bug tracker or discussions; see the Guidelines on brigading. It's bad for
-        projects when we dump 100k+ people into their community spaces, and Lobsters doesn't have good
+        projects when we dump a large audience into their community spaces, and Thneed doesn't have good
         threads when we're dropped without context into the middle of a controversy. If you weren't
         trying to brigade the site into a fight you are involved in: find an overview, preferably from
         a neutral third party. If you were trying to do that: don't.
       EXPLANATION
       ModNote.tattle_on_brigading!(self)
     end
-  end
-
-  def check_not_pushcx_stream
-    return unless url.present? && new_record? &&
-      url.start_with?("https://push.cx/stream", "https://twitch.tv/pushcx")
-    errors.add(:url, "is too much meta, we don't need it twice every week. Details: https://lobste.rs/c/skuxo9")
   end
 
   def comments_closing_soon?
@@ -630,7 +623,7 @@ class Story < ApplicationRecord
         #{u.username}: New users can't submit stories with the tag(s) #{tags_str} because they're for meta discussion or prone to off-topic stories.
         If a tag is appropriate for the story, leaving the tag off to skirt this restriction can earn a ban.
 
-        #{u.invited_by_user&.username}: This is a good opportunity for you introduce #{u.username} to what's [topical](https://lobste.rs/about#topicality) in the community.
+        #{u.invited_by_user&.username}: This is a good opportunity for you introduce #{u.username} to what's [topical](https://thneed.org/about#topicality) in the community.
 
         If you need, you can talk to the mods in this conversation, but we'll probably stay out of it unless asked.
 
@@ -1186,7 +1179,7 @@ class Story < ApplicationRecord
     if (match = u.match(/\A([^?]+)\?(.+)\z/))
       params = match[2].split(/[&?]/)
       params.reject! { |p|
-        if /^lobsters|^src=lobsters|^ref=lobsters/x.match?(p)
+        if /^(?:thneed|lobsters)|^src=(?:thneed|lobsters)|^ref=(?:thneed|lobsters)/x.match?(p)
           ModNote.tattle_on_traffic_attribution!(self)
           true
         end

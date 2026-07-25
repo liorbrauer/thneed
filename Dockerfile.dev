@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get install -y \
   vim
 
 # Set working directory
-WORKDIR /lobsters
+WORKDIR /thneed
 
 # Set database hostname
 ENV DATABASE_HOST db

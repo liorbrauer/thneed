@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 set -e
-cd /home/deploy/lobsters/current/hatchbox
+cd /home/deploy/thneed/current/hatchbox
 
 # This is a series of workarounds for misdesigns:
 #
@@ -21,11 +21,11 @@ cd /home/deploy/lobsters/current/hatchbox
 #
 # 5. https://i.imgur.com/MCHXwyi.jpeg
 
-APP_ETC=/home/deploy/lobsters/shared/etc
+APP_ETC=/home/deploy/thneed/shared/etc
 
 # the only way to get a PTR on DO name the VPS with the fqdn, ugh
 # https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/#ptr-rdns-records
-echo "lobste.rs" > /etc/hostname
+echo "thneed.org" > /etc/hostname
 
 # server packages
 apt install iptables-persistent opendkim postfix restic sqlite3
@@ -40,7 +40,7 @@ cp opendkim.m4 /etc/mail/m4/
 cp opendkim.conf /etc/
 cp opendkim.service /etc/systemd/system/
 if [ ! -f /etc/dkimkeys/mail.private ]; then
-  opendkim-genkey --verbose --restrict --selector=mail --subdomains --domain=lobste.rs --directory=/etc/dkimkeys/
+  opendkim-genkey --verbose --restrict --selector=mail --subdomains --domain=thneed.org --directory=/etc/dkimkeys/
 fi
 mkdir -p /var/spool/postfix/opendkim
 chown -R opendkim:opendkim /var/spool/postfix/opendkim /etc/dkimkeys

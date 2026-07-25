@@ -8,9 +8,9 @@ This gives you the portability of docker - you can run a dev environment on any 
 * Install an editor that supports devcontainers.
   * VS Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) is a good choice.
 * Create a fork of the repo
-* Clone repo using https - `git clone https://github.com/[USER_NAME]/lobsters.git`
+* Clone the Thneed repository using HTTPS.
   * https is **strongly recommended** due to how devcontainers handle authentcation with GitHub
-* Change to the lobsters directory - `cd lobsters` OR `code -r lobsters` if you're using VS Code.
+* Change to the Thneed directory - `cd thneed` or `code -r thneed` if you're using VS Code.
 * Copy the database config - `cp config/database.yml.sample config/database.yml`
 * Reopen the code within the devcontainer
   * For VS Code - [CMD+Shift+P] then select "Dev Containers: Reopen in Container"

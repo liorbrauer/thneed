@@ -278,7 +278,7 @@ Rails.application.routes.draw do
 
   get "/privacy" => "about#privacy"
   get "/about" => "about#about"
-  get "/chat" => "about#chat"
+  get "/chat", to: redirect("/about", status: 301)
 
   get "/stats" => "stats#index"
 

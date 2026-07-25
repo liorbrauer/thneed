@@ -2,7 +2,7 @@ class ResticJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    shared = "/home/deploy/lobsters/shared"
+    shared = "/home/deploy/thneed/shared"
     unless File.directory?(shared)
       raise "ResticJob: shared path '#{shared}' does not exist, can't back up"
     end

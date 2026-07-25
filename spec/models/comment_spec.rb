@@ -111,11 +111,11 @@ describe Comment do
     )
 
     expect(c.created_at).to be_nil
-    expect(c.generated_markeddown_comment).to eq("<p>hello <a href=\"https://lobste.rs/~alice\" rel=\"ugc\">@alice</a> and @bob</p>\n")
+    expect(c.generated_markeddown_comment).to eq("<p>hello <a href=\"https://thneed.org/~alice\" rel=\"ugc\">@alice</a> and @bob</p>\n")
 
     c.save!
     expect(c.created_at).not_to be_nil
-    expect(c.generated_markeddown_comment).to eq("<p>hello <a href=\"https://lobste.rs/~alice\" rel=\"ugc\">@alice</a> and @bob</p>\n")
+    expect(c.generated_markeddown_comment).to eq("<p>hello <a href=\"https://thneed.org/~alice\" rel=\"ugc\">@alice</a> and @bob</p>\n")
   end
 
   describe ".accessible_to_user" do

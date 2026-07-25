@@ -27,7 +27,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") {
   if ENV.fetch("RAILS_ENV") == "production"
-    "/home/deploy/lobsters/shared/tmp/pids/puma.pid"
+    "/home/deploy/thneed/shared/tmp/pids/puma.pid"
   else
     "tmp/puma.pid"
   end

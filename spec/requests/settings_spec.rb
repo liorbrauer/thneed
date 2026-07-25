@@ -23,7 +23,7 @@ describe "settings", type: :request do
       user.reload
       after_token = user.session_token
       expect(after_token).to_not eq(before_token)
-      expect(response.cookies["lobster_trap"]).to_not be_blank
+      expect(response.cookies["thneed_session"]).to_not be_blank
     end
   end
 

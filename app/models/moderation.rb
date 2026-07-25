@@ -94,7 +94,7 @@ class Moderation < ApplicationRecord
           "\n" \
           "> *#{reason}*\n" \
           "\n" \
-          "Maybe the guidelines on topicality are useful: https://lobste.rs/about#topicality"
+          "Maybe the guidelines on topicality are useful: https://thneed.org/about#topicality"
       end
 
     elsif comment

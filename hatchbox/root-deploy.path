@@ -2,8 +2,8 @@
 Description=root-deploy path hook
 
 [Path]
-PathModified=/home/deploy/lobsters/current
-PathChanged=/home/deploy/lobsters/current
+PathModified=/home/deploy/thneed/current
+PathChanged=/home/deploy/thneed/current
 Unit=root-deploy.service
 
 [Install]

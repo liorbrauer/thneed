@@ -9,7 +9,7 @@ Rails.application.config.filter_parameters += [
   :certificate, # preventative
   :crypt, # preventative
   :_key, # preventative
-  :lobster_trap, # session cookie
+  :thneed_session, # session cookie
   :otp, # preventative
   :password_confirmation, # LoginController (redundant with passw)
   :password, # LoginController (redundant with passw)

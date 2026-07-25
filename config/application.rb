@@ -107,15 +107,15 @@ class << Rails.application
   end
 
   def domain
-    "lobste.rs"
+    "thneed.org"
   end
 
   def name
-    "Lobsters"
+    "Thneed"
   end
 
   def og_description
-    "A computing-focused community centered around link aggregation and discussion."
+    "A community for thoughtful discussion about how AI is changing human work, creativity, power and agency."
   end
 
   # to force everyone to be considered logged-out (without destroying
@@ -144,6 +144,6 @@ class << Rails.application
 
   # username of the admin account used to ban domains automatically (e.g., URL shorteners)
   def banned_domains_admin
-    ENV["BANNED_DOMAINS_ADMIN"] || "pushcx"
+    ENV["BANNED_DOMAINS_ADMIN"] || "sysop"
   end
 end

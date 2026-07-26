@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" role="img" aria-labelledby="title">
   <title id="title">thneed</title>
-  <rect width="120" height="32" fill="#111"/>
+  <rect width="120" height="32" rx="2" fill="#b74139"/>
   <text x="8" y="23" fill="#fff" font-family="system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="-1">thneed</text>
 </svg>

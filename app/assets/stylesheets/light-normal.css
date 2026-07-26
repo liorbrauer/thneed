@@ -1,9 +1,10 @@
 /* light color scheme */
 
 :root {
-	/* monochrome */
-	--base-bg: 254 254 254;
-	--base-fg: 51 51 51;
+	color-scheme: light;
+
+	--base-bg: 252 252 251;
+	--base-fg: 41 43 47;
 
 	--opacity-fg: 100%; /* primary text */
 	--opacity-fg-contrast-13: 94%;
@@ -23,38 +24,40 @@
 	--opacity-deleted: 0.6;
 
 	/* backgrounds and foregrounds */
-	--color-bg-accent: #111;
-	--color-bg-target: #eee;
+	--color-bg-accent: #b74139;
+	--color-bg-target: #f3e8e6;
 
-	--color-fg-link: #222;
-	--color-fg-link-visited: #666;
-	--color-fg-accent: #111;
+	--color-fg-link: #1f5fbf;
+	--color-fg-link-visited: #5b5795;
+	--color-fg-accent: #b74139;
+	--color-fg-on-accent: #fff;
 	--color-fg-negative: rgb(139 0 0); /* red as in warning */
 	--color-fg-affirmative: rgb(0 128 0);
 	--color-fg-author: rgb(96 129 189);
-	--color-fg-shape: rgb(187 187 187);
+	--color-fg-shape: rgb(174 178 184);
 
 	/* elements */
 	--color-box-bg: #fff;
-	--color-box-bg-shaded: #eee;
-	--color-box-border: #ccc;
-	--color-box-border-focus: #808080;
+	--color-box-bg-shaded: #f1f2f3;
+	--color-box-border: #d4d7db;
+	--color-box-border-focus: #1f5fbf;
+	--color-header-bg: #202226;
 
-	--color-button-bg: #fafafa;
-	--color-button-bg-shaded: #e6e6e6;
+	--color-button-bg: #f7f8f9;
+	--color-button-bg-shaded: #e9ebed;
 
-	--color-table-header-bg: #eaeaea;
-	--color-table-header-border: #cacaca;
-	--color-table-row-bg-even: #f8f8f8;
-	--color-table-row-bg-odd: #f5f5f5;
-	--color-table-row-border: #eaeaea;
+	--color-table-header-bg: #e9ebed;
+	--color-table-header-border: #cfd3d8;
+	--color-table-row-bg-even: #fafafa;
+	--color-table-row-bg-odd: #f4f5f6;
+	--color-table-row-border: #e4e6e9;
 
-	--color-tag-bg: #f4f4f4;
-	--color-tag-border: #ccc;
-	--color-tag-media-bg: #eee;
-	--color-tag-media-border: #bbb;
-	--color-tag-meta-bg: #e0e0e0;
-	--color-tag-meta-border: #c8c8c8;
+	--color-tag-bg: #f1f2f3;
+	--color-tag-border: #d4d7db;
+	--color-tag-media-bg: #e6f0fb;
+	--color-tag-media-border: #a8c7e8;
+	--color-tag-meta-bg: #e8eaec;
+	--color-tag-meta-border: #c8ccd1;
 
 	--color-hat-crown-fill: #ddd;
 	--color-hat-crown-stroke: #eee;
@@ -64,9 +67,9 @@
 	--color-flash-bg-success: #dff0d8;
 	--color-flash-bg-notice: #cce6ee;
 
-	--color-thneed-fg-has-suggestions: #555;
-	--color-thneed-tag-special-bg: #e8e8e8;
-	--color-thneed-tag-special-border: #aaa;
+	--color-thneed-fg-has-suggestions: #a2322c;
+	--color-thneed-tag-special-bg: #f7e8e6;
+	--color-thneed-tag-special-border: #d7a19c;
 	--color-thneed-hat-sysop-crown-fill: #ccc;
 	--color-thneed-hat-sysop-brim-stroke: #aaa;
 

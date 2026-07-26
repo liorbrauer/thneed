@@ -1,7 +1,8 @@
 /* dark color scheme (contrast) */
 
 :root {
-	/* monochrome */
+	color-scheme: dark;
+
 	--base-bg: 0 0 0;
 	--base-fg: 255 255 255;
 
@@ -23,12 +24,13 @@
 	--opacity-deleted: 0.7;
 
 	/* backgrounds and foregrounds */
-	--color-bg-accent: #fff;
-	--color-bg-target: #333;
+	--color-bg-accent: #b74139;
+	--color-bg-target: #402220;
 
-	--color-fg-link: #fff;
-	--color-fg-link-visited: #ccc;
-	--color-fg-accent: #fff;
+	--color-fg-link: #9bc5ff;
+	--color-fg-link-visited: #d0c4ff;
+	--color-fg-accent: #ffaaa2;
+	--color-fg-on-accent: #fff;
 	--color-fg-negative: rgb(255 60 60); /* red as in warning */
 	--color-fg-affirmative: rgb(60 200 60);
 	--color-fg-author: rgb(100 140 220);
@@ -38,7 +40,8 @@
 	--color-box-bg: #111;
 	--color-box-bg-shaded: #222;
 	--color-box-border: #444;
-	--color-box-border-focus: #999;
+	--color-box-border-focus: #9bc5ff;
+	--color-header-bg: #111;
 
 	--color-button-bg: #222;
 	--color-button-bg-shaded: #333;
@@ -64,9 +67,9 @@
 	--color-flash-bg-success: #006600;
 	--color-flash-bg-notice: #003366;
 
-	--color-thneed-fg-has-suggestions: #fff;
-	--color-thneed-tag-special-bg: #222;
-	--color-thneed-tag-special-border: #fff;
+	--color-thneed-fg-has-suggestions: #ffaaa2;
+	--color-thneed-tag-special-bg: #441f1d;
+	--color-thneed-tag-special-border: #ffaaa2;
 	--color-thneed-hat-sysop-crown-fill: #555;
 	--color-thneed-hat-sysop-brim-stroke: #fff;
 

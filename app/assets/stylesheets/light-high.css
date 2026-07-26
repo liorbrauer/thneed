@@ -1,7 +1,8 @@
 /* light color scheme (contrast) */
 
 :root {
-	/* monochrome */
+	color-scheme: light;
+
 	--base-bg: 255 255 255;
 	--base-fg: 0 0 0;
 
@@ -23,12 +24,13 @@
 	--opacity-deleted: 0.7;
 
 	/* backgrounds and foregrounds */
-	--color-bg-accent: #000;
-	--color-bg-target: #eee;
+	--color-bg-accent: #9f241f;
+	--color-bg-target: #f3dddd;
 
-	--color-fg-link: #000;
-	--color-fg-link-visited: #333;
-	--color-fg-accent: #000;
+	--color-fg-link: #003cc5;
+	--color-fg-link-visited: #4b2f8f;
+	--color-fg-accent: #9f241f;
+	--color-fg-on-accent: #fff;
 	--color-fg-negative: rgb(170 0 0); /* red as in warning */
 	--color-fg-affirmative: rgb(0 100 0);
 	--color-fg-author: rgb(47 84 150);
@@ -38,7 +40,8 @@
 	--color-box-bg: #fff;
 	--color-box-bg-shaded: #ddd;
 	--color-box-border: #666;
-	--color-box-border-focus: #000;
+	--color-box-border-focus: #003cc5;
+	--color-header-bg: #111;
 
 	--color-button-bg: #fff;
 	--color-button-bg-shaded: #ddd;
@@ -64,9 +67,9 @@
 	--color-flash-bg-success: #b5eab5;
 	--color-flash-bg-notice: #cbe5ff;
 
-	--color-thneed-fg-has-suggestions: #000;
-	--color-thneed-tag-special-bg: #eee;
-	--color-thneed-tag-special-border: #000;
+	--color-thneed-fg-has-suggestions: #8b1d18;
+	--color-thneed-tag-special-bg: #ffe0dd;
+	--color-thneed-tag-special-border: #9f241f;
 	--color-thneed-hat-sysop-crown-fill: #ddd;
 	--color-thneed-hat-sysop-brim-stroke: #000;
 

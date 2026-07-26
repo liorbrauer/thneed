@@ -9,6 +9,7 @@ RSpec.describe "Thneed public identity", type: :request do
     expect(response.body).to include(">thneed</a>")
     expect(response.body).to include(Rails.application.og_description)
     expect(response.body).to include('title="Thneed"')
+    expect(response.body).to include('<meta name="theme-color" content="#202226">')
   end
 
   it "publishes the community policy" do
@@ -66,6 +67,17 @@ RSpec.describe "Thneed public identity", type: :request do
       page = Rails.public_path.join("#{status}.html").read
       expect(page).to include("Thneed HTTP #{status}")
       expect(page).not_to match(/lobsters|irc\.libera/i)
+    end
+  end
+
+  it "ships the coral application icon" do
+    icon = Rails.public_path.join("icon.svg").read
+
+    expect(icon).to include('fill="#b74139"')
+    expect(icon).to include('fill="#fff"')
+
+    %w[favicon.ico touch-icon.png touch-icon-144.png touch-icon-192.png].each do |asset|
+      expect(Rails.public_path.join(asset)).to exist
     end
   end
 end

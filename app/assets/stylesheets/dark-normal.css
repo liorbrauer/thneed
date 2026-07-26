@@ -1,8 +1,9 @@
 /* dark color scheme */
 
 :root {
-	/* monochrome */
-	--base-bg: 12 12 12;
+	color-scheme: dark;
+
+	--base-bg: 18 20 23;
 	--base-fg: 255 255 255;
 
 	--opacity-fg: 87%; /* primary text */
@@ -23,38 +24,40 @@
 	--opacity-deleted: 0.6;
 
 	/* backgrounds and foregrounds */
-	--color-bg-accent: #eee;
-	--color-bg-target: #333;
+	--color-bg-accent: #b74139;
+	--color-bg-target: #352625;
 
-	--color-fg-link: #eee;
-	--color-fg-link-visited: #aaa;
-	--color-fg-accent: #fff;
+	--color-fg-link: #79b8ff;
+	--color-fg-link-visited: #b1a7e6;
+	--color-fg-accent: #ff8a80;
+	--color-fg-on-accent: #fff;
 	--color-fg-negative: rgb(190 45 45); /* red as in warning */
 	--color-fg-affirmative: rgb(42 180 42);
 	--color-fg-author: rgb(80 112 177);
-	--color-fg-shape: rgb(80 80 80);
+	--color-fg-shape: rgb(91 97 106);
 
 	/* elements */
-	--color-box-bg: #141414;
-	--color-box-bg-shaded: #202020;
-	--color-box-border: #303030;
-	--color-box-border-focus: #808080;
+	--color-box-bg: #191c20;
+	--color-box-bg-shaded: #22262b;
+	--color-box-border: #343941;
+	--color-box-border-focus: #79b8ff;
+	--color-header-bg: #1b1e23;
 
-	--color-button-bg: #181818;
-	--color-button-bg-shaded: #242424;
+	--color-button-bg: #1d2126;
+	--color-button-bg-shaded: #292e35;
 
-	--color-table-header-bg: #262626;
-	--color-table-header-border: #404040;
-	--color-table-row-bg-even: #181818;
-	--color-table-row-bg-odd: #1b1b1b;
-	--color-table-row-border: #262626;
+	--color-table-header-bg: #292e35;
+	--color-table-header-border: #3d434c;
+	--color-table-row-bg-even: #171a1e;
+	--color-table-row-bg-odd: #1d2126;
+	--color-table-row-border: #292e35;
 
-	--color-tag-bg: #3b320d;
-	--color-tag-border: #665501;
-	--color-tag-media-bg: #15293d;
-	--color-tag-media-border: #214669;
-	--color-tag-meta-bg: #2c2c2c;
-	--color-tag-meta-border: #484848;
+	--color-tag-bg: #25292f;
+	--color-tag-border: #3b414a;
+	--color-tag-media-bg: #172d43;
+	--color-tag-media-border: #2b5277;
+	--color-tag-meta-bg: #2a2e34;
+	--color-tag-meta-border: #454b54;
 
 	--color-hat-crown-fill: #3b3b3b;
 	--color-hat-crown-stroke: #202020;
@@ -64,9 +67,9 @@
 	--color-flash-bg-success: #273820;
 	--color-flash-bg-notice: #142e36;
 
-	--color-thneed-fg-has-suggestions: #bbb;
-	--color-thneed-tag-special-bg: #333;
-	--color-thneed-tag-special-border: #777;
+	--color-thneed-fg-has-suggestions: #ff8a80;
+	--color-thneed-tag-special-bg: #3d2221;
+	--color-thneed-tag-special-border: #7b403c;
 	--color-thneed-hat-sysop-crown-fill: #444;
 	--color-thneed-hat-sysop-brim-stroke: #777;
 

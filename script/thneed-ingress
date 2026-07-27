@@ -7,5 +7,24 @@ cd /home/deploy/thneed/current
 source /home/deploy/.asdf/asdf.sh
 eval "$(/home/deploy/.asdf/bin/asdf vars)"
 
-# INGRESS_PASSWORD is in a hatchbox env var
-/home/deploy/.asdf/shims/bundle exec rails action_mailbox:ingress:postfix URL=https://thneed.org/rails/action_mailbox/relay/inbound_emails
+if [ -z "$INGRESS_PASSWORD" ]; then
+  INGRESS_PASSWORD=$(cat /home/deploy/thneed/shared/etc/ingress_password)
+  export INGRESS_PASSWORD
+fi
+
+# Invoke the official relayer directly so receiving mail does not boot the
+# application and eagerly load unrelated native dependencies such as ruby-vips.
+URL=https://thneed.org/rails/action_mailbox/relay/inbound_emails \
+  /home/deploy/.asdf/shims/bundle exec ruby -rbase64 -raction_mailbox/relayer -e '
+    url = ENV["URL"]
+    password = ENV["INGRESS_PASSWORD"]
+
+    if url.to_s.empty? || password.to_s.empty?
+      print "4.3.5 URL and INGRESS_PASSWORD are required"
+      exit 1
+    end
+
+    result = ActionMailbox::Relayer.new(url:, password:).relay($stdin.read)
+    print "#{result.status_code} #{result.message}"
+    exit result.success?
+  '

@@ -4,6 +4,10 @@ require "fileutils"
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Postfix and the Hatchbox-managed application processes share this secret.
+  ENV["RAILS_INBOUND_EMAIL_PASSWORD"] ||= ENV["INGRESS_PASSWORD"] ||
+    File.read("/home/deploy/thneed/shared/etc/ingress_password").strip
+
   # Prepare the ingress controller used to receive mail
   config.action_mailbox.ingress = :relay
 

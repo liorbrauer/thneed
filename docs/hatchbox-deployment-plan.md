@@ -46,6 +46,8 @@ storage and upload:
 - `etc/database.yml`, based on `config/database.yml.sample`.
 - `etc/admin_email`, containing the external destination for all
   administrative aliases.
+- `etc/ingress_password`, mode `0600`, containing the same generated Action
+  Mailbox relay secret as the Hatchbox `INGRESS_PASSWORD` variable.
 - `etc/restic-env`, mode `0600`, containing the S3 endpoint, bucket
   credentials, repository URL, and a generated Restic password.
 - Persistent `storage`, `database-backups`, `log`, `tmp/pids`, and

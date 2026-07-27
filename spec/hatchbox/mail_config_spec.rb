@@ -41,4 +41,39 @@ RSpec.describe "Hatchbox mail configuration" do
     expect(hatchbox.join("transport").read).to include("thneed.org thneed-ingress:")
     expect(hatchbox.join("master.cf").read).to include("thneed-ingress")
   end
+
+  it "accepts Action Mailbox reply recipients without accepting the whole domain" do
+    main_cf = hatchbox.join("main.cf").read
+    local_recipients = hatchbox.join("local_recipients").read
+    root_deploy = hatchbox.join("root-deploy").read
+
+    expect(main_cf).to include("regexp:/etc/postfix/local_recipients")
+    expect(local_recipients).to include("/^thneed-[[:alnum:]]+@thneed[.]org$/ OK")
+    expect(root_deploy).to include("transport local_recipients /etc/postfix/")
+    expect(main_cf).not_to match(/^local_recipient_maps\s*=\s*$/)
+  end
+
+  it "uses IPv4 for the initial mail launch" do
+    expect(hatchbox.join("main.cf").read).to match(/^inet_protocols = ipv4$/)
+  end
+
+  it "relays inbound mail without booting the full Rails application" do
+    ingress = Pathname(__dir__).join("../../script/thneed-ingress").expand_path.read
+
+    expect(ingress).to include("require action_mailbox/relayer")
+      .or include("-raction_mailbox/relayer")
+    expect(ingress).to include("ActionMailbox::Relayer.new")
+    expect(ingress).not_to include("exec rails action_mailbox:ingress:postfix")
+  end
+
+  it "shares the Hatchbox ingress secret with the Rails relay controller" do
+    production = Pathname(__dir__).join("../../config/environments/production.rb").expand_path.read
+
+    expect(production).to include(
+      'ENV["RAILS_INBOUND_EMAIL_PASSWORD"] ||= ENV["INGRESS_PASSWORD"] ||'
+    )
+    expect(production).to include('shared/etc/ingress_password')
+    expect(ingress = Pathname(__dir__).join("../../script/thneed-ingress").expand_path.read)
+      .to include("shared/etc/ingress_password")
+  end
 end

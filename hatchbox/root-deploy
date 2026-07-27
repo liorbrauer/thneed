@@ -49,7 +49,7 @@ systemctl restart opendkim
 
 # configure postfix
 adduser postfix opendkim
-cp main.cf master.cf virtual_aliases transport /etc/postfix/
+cp main.cf master.cf virtual_aliases transport local_recipients /etc/postfix/
 sed -i "s/ADMIN_EMAIL/$ADMIN_EMAIL/g" /etc/postfix/virtual_aliases
 postmap /etc/postfix/virtual_aliases
 postmap /etc/postfix/transport

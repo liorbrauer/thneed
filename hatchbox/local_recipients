@@ -1,0 +1,3 @@
+# Accept personalized Action Mailbox reply addresses. Administrative aliases
+# and system users are accepted by the other local_recipient_maps lookups.
+/^thneed-[[:alnum:]]+@thneed[.]org$/ OK

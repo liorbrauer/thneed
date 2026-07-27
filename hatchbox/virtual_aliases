@@ -1,1 +1,14 @@
-@thneed.org deploy@thneed.org
+# Keep administrative addresses out of the domain-wide Action Mailbox
+# transport. root-deploy replaces ADMIN_EMAIL before building this map.
+root@thneed.org ADMIN_EMAIL
+abuse@thneed.org ADMIN_EMAIL
+admin@thneed.org ADMIN_EMAIL
+contact@thneed.org ADMIN_EMAIL
+deploy@thneed.org ADMIN_EMAIL
+help@thneed.org ADMIN_EMAIL
+postmaster@thneed.org ADMIN_EMAIL
+privacy@thneed.org ADMIN_EMAIL
+security@thneed.org ADMIN_EMAIL
+support@thneed.org ADMIN_EMAIL
+webmaster@thneed.org ADMIN_EMAIL
+sysop@thneed.org ADMIN_EMAIL

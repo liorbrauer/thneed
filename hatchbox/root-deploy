@@ -22,6 +22,7 @@ cd /home/deploy/thneed/current/hatchbox
 # 5. https://i.imgur.com/MCHXwyi.jpeg
 
 APP_ETC=/home/deploy/thneed/shared/etc
+ADMIN_EMAIL=$(cat "$APP_ETC/admin_email")
 
 # the only way to get a PTR on DO name the VPS with the fqdn, ugh
 # https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/#ptr-rdns-records
@@ -36,9 +37,9 @@ apt install iptables-persistent opendkim postfix restic sqlite3
 apt install libclang-dev
 
 # configure opendkim for postfix
-cp opendkim.m4 /etc/mail/m4/
 cp opendkim.conf /etc/
 cp opendkim.service /etc/systemd/system/
+install -d -o opendkim -g opendkim -m 0750 /etc/dkimkeys
 if [ ! -f /etc/dkimkeys/mail.private ]; then
   opendkim-genkey --verbose --restrict --selector=mail --subdomains --domain=thneed.org --directory=/etc/dkimkeys/
 fi
@@ -49,13 +50,16 @@ systemctl restart opendkim
 # configure postfix
 adduser postfix opendkim
 cp main.cf master.cf virtual_aliases transport /etc/postfix/
+sed -i "s/ADMIN_EMAIL/$ADMIN_EMAIL/g" /etc/postfix/virtual_aliases
 postmap /etc/postfix/virtual_aliases
 postmap /etc/postfix/transport
+if [ -f /var/spool/postfix/etc/resolv.conf ]; then
+  chown root:root /var/spool/postfix/etc/resolv.conf
+fi
 postfix reload
 
 # I get bounces daily from journalduhacker.net who left my email in their config.
 cp aliases /etc/
-ADMIN_EMAIL=$(cat $APP_ETC/admin_email)
 sed -i "s/ADMIN_EMAIL/$ADMIN_EMAIL/g" /etc/aliases
 newaliases
 

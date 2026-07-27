@@ -274,7 +274,7 @@ class Story < ApplicationRecord
       check_already_posted_recently?
       check_not_banned_domain
       check_not_banned_origin
-      check_not_new_domain_from_new_user
+      check_not_new_domain_from_new_user unless allow_new_domains_from_new_users?
       check_not_brigading
       errors.add(:url, "is not valid") unless url.match(Utils::URL_RE)
     elsif description.to_s.strip == ""
@@ -301,6 +301,10 @@ class Story < ApplicationRecord
 
   def self./(short_id)
     find_by! short_id:
+  end
+
+  def allow_new_domains_from_new_users?
+    ENV.fetch("ALLOW_NEW_DOMAINS_FROM_NEW_USERS", "false") == "true"
   end
 
   def accepting_comments?

@@ -1,0 +1,185 @@
+categories:
+  - name: community
+    tags:
+      - name: announce
+        description: Official Thneed community announcements
+        privileged: true
+        permit_by_new_users: false
+      - name: ask
+        description: Questions seeking informed answers from the community
+        permit_by_new_users: false
+      - name: meta
+        description: Thneed governance, moderation, features, and tag proposals
+        hotness_mod: -0.25
+        permit_by_new_users: false
+      - name: show
+        description: Member-created projects, experiments, or original work
+        permit_by_new_users: false
+
+  - name: format
+    tags:
+      - name: audio
+        description: Audio-first source, including podcasts and recorded interviews
+        is_media: true
+      - name: book
+        description: A book or substantial book excerpt
+      - name: event
+        description: Conference, workshop, hearing, exhibition, or community event
+      - name: interview
+        description: A substantive interview in any medium
+      - name: paper
+        description: Scholarly paper, working paper, or preprint
+      - name: pdf
+        description: Source primarily distributed as a PDF
+        is_media: true
+      - name: report
+        description: Institutional, industry, government, or public-interest report
+      - name: transcript
+        description: A substantive transcript accompanying audio or video
+      - name: video
+        description: Video-first source, including talks and documentaries
+        is_media: true
+
+  - name: economy-work
+    tags:
+      - name: automation
+        description: Substitution, augmentation, and redesign of human tasks
+      - name: economics
+        description: Productivity, markets, investment, value, and economic effects
+      - name: gig-work
+        description: Platform labor, contracting, piecework, and hidden human labor
+      - name: hiring
+        description: Recruiting, assessment, credentialing, and employment access
+      - name: labor
+        description: Jobs, wages, unions, worker organization, and labor conditions
+      - name: management
+        description: Organizational decisions, measurement, supervision, and control
+      - name: professions
+        description: Effects on established crafts and professional practice
+      - name: workplace
+        description: Everyday use, refusal, monitoring, and negotiation of AI at work
+
+  - name: creative-practice
+    tags:
+      - name: art
+        description: Visual art, illustration, photography, and artistic practice
+      - name: design
+        description: Graphic, product, interaction, architectural, and industrial design
+      - name: film
+        description: Film, animation, television, performance, and production
+      - name: games
+        description: Games, interactive storytelling, play, and game development
+      - name: music
+        description: Composition, performance, recording, and the music industry
+      - name: writing
+        description: Literature, publishing, translation, and writing practice
+
+  - name: knowledge
+    tags:
+      - name: education
+        description: Teaching, learning, assessment, schools, and universities
+      - name: history
+        description: Historical context and substantive retrospectives
+      - name: journalism
+        description: Reporting, newsrooms, source verification, and media institutions
+      - name: research
+        description: Research practice, institutions, funding, and publication
+      - name: science
+        description: Scientific discovery, evidence, reproducibility, and laboratories
+
+  - name: systems-tools
+    tags:
+      - name: agents
+        description: Systems that plan, act, or use tools with limited supervision
+      - name: coding
+        description: Software development, programming tools, and developer work
+      - name: data
+        description: Training data, datasets, labeling, collection, and data governance
+      - name: evaluation
+        description: Measurement of capability, reliability, impact, and behavior
+      - name: infrastructure
+        description: Compute, chips, data centers, energy, and supply chains
+      - name: interfaces
+        description: Human-AI interaction, usability, control, and product design
+      - name: models
+        description: Model capabilities, architecture, training, and behavior
+      - name: open-source
+        description: Open models, software, weights, licenses, and communities
+      - name: robotics
+        description: Embodied AI, autonomous machines, and physical automation
+
+  - name: governance
+    tags:
+      - name: competition
+        description: Market concentration, antitrust, lock-in, and industry structure
+      - name: geopolitics
+        description: International competition, trade, diplomacy, and development
+      - name: law
+        description: Courts, legal doctrine, liability, enforcement, and litigation
+      - name: military
+        description: Defense, warfare, intelligence, targeting, and autonomous weapons
+      - name: policy
+        description: Public-policy proposals, analysis, and institutional choices
+      - name: public-sector
+        description: Government procurement, administration, and public services
+      - name: standards
+        description: Technical standards, certification, audits, and assurance regimes
+
+  - name: rights-power
+    tags:
+      - name: access
+        description: Availability, affordability, digital divides, and participation
+      - name: copyright
+        description: Authorship, licensing, attribution, and creative rights
+      - name: inequality
+        description: Unequal distribution of AI's benefits, costs, and influence
+      - name: labor-rights
+        description: Worker consent, bargaining, due process, and workplace protections
+      - name: ownership
+        description: Control of models, data, infrastructure, and generated work
+      - name: privacy
+        description: Personal data, consent, confidentiality, and data protection
+      - name: surveillance
+        description: Monitoring, tracking, profiling, and behavioral control
+
+  - name: human-society
+    tags:
+      - name: agency
+        description: Human choice, autonomy, dependence, deskilling, and meaningful control
+      - name: children
+        description: Effects on children, parenting, development, and youth protections
+      - name: cognition
+        description: Attention, memory, judgment, learning, and cognitive offloading
+      - name: culture
+        description: Social norms, communities, language, taste, and shared meaning
+      - name: democracy
+        description: Elections, civic participation, public discourse, and legitimacy
+      - name: disability
+        description: Accessibility, assistive technology, inclusion, and exclusion
+      - name: health
+        description: Healthcare, mental health, wellbeing, diagnosis, and care
+      - name: identity
+        description: Personhood, representation, authenticity, and self-understanding
+      - name: philosophy
+        description: Conceptual and ethical questions about intelligence and humanity
+      - name: relationships
+        description: Companionship, intimacy, caregiving, trust, and social connection
+
+  - name: risk-accountability
+    tags:
+      - name: accountability
+        description: Responsibility, audits, remedies, contestability, and redress
+      - name: bias
+        description: Discrimination, fairness, representation, and disparate impact
+      - name: environment
+        description: Energy, water, emissions, extraction, and ecological consequences
+      - name: fraud
+        description: Scams, impersonation, forgery, and AI-enabled deception
+      - name: misinformation
+        description: Synthetic media, false information, provenance, and verification
+      - name: safety
+        description: Accidents, loss of control, systemic risk, and safe deployment
+      - name: security
+        description: Adversarial attacks, abuse, vulnerabilities, and defensive uses
+      - name: transparency
+        description: Disclosure, explainability, traceability, and documentation

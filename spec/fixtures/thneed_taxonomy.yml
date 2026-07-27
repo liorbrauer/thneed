@@ -1,0 +1,11 @@
+categories:
+  - name: community
+    tags:
+      - name: ask
+        description: Questions for the community
+        permit_by_new_users: false
+  - name: format
+    tags:
+      - name: video
+        description: Video-first source
+        is_media: true

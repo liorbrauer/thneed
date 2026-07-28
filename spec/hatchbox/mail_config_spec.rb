@@ -72,7 +72,7 @@ RSpec.describe "Hatchbox mail configuration" do
     expect(production).to include(
       'ENV["RAILS_INBOUND_EMAIL_PASSWORD"] ||= ENV["INGRESS_PASSWORD"] ||'
     )
-    expect(production).to include('shared/etc/ingress_password')
+    expect(production).to include("shared/etc/ingress_password")
     expect(ingress = Pathname(__dir__).join("../../script/thneed-ingress").expand_path.read)
       .to include("shared/etc/ingress_password")
   end

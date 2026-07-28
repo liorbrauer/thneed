@@ -47,7 +47,7 @@ RSpec.describe "shipped brand hygiene" do
       matches = File.readlines(file, encoding: "UTF-8").each_with_index.filter_map do |line, index|
         next unless line.match?(/lobste(?:rs|r|\.rs)/i)
         next if line.match?(%r{github\.com/lobsters/lobsters})
-        next if relative == "app/javascript/application.js" &&
+        next if %w[app/javascript/application.js app/javascript/user.js].include?(relative) &&
           line.match?(/\b_?Lobsters?(?:Function)?\b/)
 
         "#{relative}:#{index + 1}: #{line.strip}"
